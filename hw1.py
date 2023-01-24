@@ -1,14 +1,5 @@
 import module1, module3, module4
 
-
-
-
-
-
-
-
-
-
 gr = module4.Group('Python-pro')
 
 st1 = module3.Student('Kuzmenko', 'Ivan', '19')
