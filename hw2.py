@@ -1,25 +1,25 @@
-import module11, module12, module13, module14
-from module12 import Product
+import module_neg_price_error, module_Product, module_Customer, module_Cart
+
 
 try:
-    x_1 = Product('banana', -10)
-except module11.NegativePriceError as error:
+    x_1 = module_Product.Product('banana', -10)
+except module_neg_price_error.NegativePriceError as error:
     print(error)
 
 try:
-    x_2 = Product('apple', 25)
-except module11.NegativePriceError as error:
+    x_2 = module_Product.Product('apple', 25)
+except module_neg_price_error.NegativePriceError as error:
     print(error)
 
 try:
-    x_3 = Product('orange', 35)
-except module11.NegativePriceError as error:
+    x_3 = module_Product.Product('orange', 35)
+except module_neg_price_error.NegativePriceError as error:
     print(error)
 
-customer_1 = module13.Customer('Ivanov', 'Ivan', '123456789')
-customer_2 = module13.Customer('Ivanov', 'Petro', '123456799')
+customer_1 = module_Customer.Customer('Ivanov', 'Ivan', '123456789')
+customer_2 = module_Customer.Customer('Ivanov', 'Petro', '123456799')
 
-order_1 = module14.Cart(customer_1)
+order_1 = module_Cart.Cart(customer_1)
 
 try:
     order_1.add_product(x_1)
@@ -38,6 +38,6 @@ except NameError:
 
 print(order_1)
 
-order_2 = module14.Cart(customer_2)
+order_2 = module_Cart.Cart(customer_2)
 order_2.add_product(x_2, 10)
 print(order_2)
