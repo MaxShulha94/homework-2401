@@ -1,4 +1,6 @@
-import module_Product, module_Customer
+import module_Customer
+import module_Product
+
 
 class Cart:
     MAX_LIMIT = 40
@@ -9,14 +11,10 @@ class Cart:
         self.__quantities = []
 
     def __getitem__(self, item):
-        if not isinstance(item, int):
-            raise TypeError
-
-        if item > len(self.__products):
-            raise IndexError
+        return self.__products[item]
 
     def __len__(self):
-        return self.__products
+        return len(self.__products)
 
     def get_weight(self):
         return sum(self.__quantities)
@@ -39,3 +37,4 @@ class Cart:
                                 zip(self.__products, self.__quantities)))
         result += f'\nTotal: {self.total()} UAH'
         return result
+
