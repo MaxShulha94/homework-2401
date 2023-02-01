@@ -1,9 +1,24 @@
 import module_Student, module_logging
+
+class GroupIterator:
+    def __init__(self, students):
+        self.students = students
+        self.index = 0
+
+    def __next__(self):
+        if self.index < self.students:
+            self.index += 1
+            return self.students[self.index - 1]
+        raise StopIteration
+
 class Group:
     def __init__(self, specialize, limit_st=10):
         self.specialize = specialize
         self.limit_st = limit_st
         self.list_group = []
+
+    def __iter__(self):
+        return GroupIterator(self.list_group)
 
     def __getitem__(self, item):
         return self.list_group[item]
