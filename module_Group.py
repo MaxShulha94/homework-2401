@@ -5,6 +5,12 @@ class Group:
         self.limit_st = limit_st
         self.list_group = []
 
+    def __getitem__(self, item):
+        return self.list_group[item]
+
+    def __len__(self):
+        return len(self.list_group)
+
     def add_st(self, student: module_Student.Student):
         if len(self.list_group) > self.limit_st:
             raise module_logging.LimitError('You can not add more than 10 students!')
