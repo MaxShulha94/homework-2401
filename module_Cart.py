@@ -8,6 +8,16 @@ class Cart:
         self.__products = []
         self.__quantities = []
 
+    def __getitem__(self, item):
+        if not isinstance(item, int):
+            raise TypeError
+
+        if item > len(self.__products):
+            raise IndexError
+
+    def __len__(self):
+        return self.__products
+
     def get_weight(self):
         return sum(self.__quantities)
 
