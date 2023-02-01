@@ -47,9 +47,3 @@ class Group:
     def __str__(self):
         return f'{self.specialize}:\n' + '\n'.join(map(str, self.students))
 
-a = Group('sedf')
-a.students.append('Asd, asdasd')
-a.students.append('dfgtg, dfgsdfgdfg')
-a.students.append('yuid, abgrsd')
-for item in a:
-    print(item)
